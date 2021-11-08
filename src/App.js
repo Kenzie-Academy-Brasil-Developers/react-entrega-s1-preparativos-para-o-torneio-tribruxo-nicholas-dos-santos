@@ -7,7 +7,7 @@ function App() {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    fetch("http://hp-api.herokuapp.com/api/characters/students")
+    fetch("https://hp-api.herokuapp.com/api/characters/students")
       .then((response) => response.json())
       .then((response) => {
         setStudents(response.filter((item) => item.image !== ""));
