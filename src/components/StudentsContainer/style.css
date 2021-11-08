@@ -1,0 +1,31 @@
+.mainContainer__players {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainContainer button {
+  width: 80px;
+  height: 30px;
+  border: 2px solid #520707;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  box-sizing: border-box;
+  background: white;
+  color: black;
+}
+
+@media (min-width: 700px) {
+  .mainContainer__players {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .mainContainer button:hover {
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+  }
+}
