@@ -17,27 +17,32 @@ function App() {
   function showPlayers() {
     let list = [];
 
-    for (let i = 0; i < 3; i++) {
+    while (list.length < 3) {
       let min = Math.ceil(0);
       let max = Math.floor(students.length);
 
       let num = Math.floor(Math.random() * (max - min)) + min;
-      list.push(students[num]);
+
+      const value = list.some((item) => item.house === students[num].house);
+
+      if (value === false) {
+        list.push(students[num]);
+        console.log(list.length);
+      }
     }
 
-    setPlayers([...list]);
+    setPlayers(list);
   }
 
   return (
     <div className="App">
-      <main className="App-main">
-        <header>
-          <h2>Torneio tribruxo</h2>
-        </header>
-        <StudentsContainer players={players} showPlayers={showPlayers} />
-      </main>
+      <StudentsContainer showPlayers={showPlayers} players={players} />
     </div>
   );
 }
 
 export default App;
+
+// Integrar as respostas da API na interface da sua aplicação de forma aleatória
+// Acessar, requisitar e renderizar três objetos referentes ao endpoint students através da API
+// Ao renderizar um objeto de students, você deverá utilizar pelo menos o item name e mais dois itens, exemplo:
